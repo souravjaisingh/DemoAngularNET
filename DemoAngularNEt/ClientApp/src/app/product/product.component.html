@@ -1,0 +1,19 @@
+<div class="product-container">
+  <h1>Product Management</h1>
+
+  <!-- Create Product Form -->
+  <div class="form-group">
+    <input [(ngModel)]="newProduct.name" placeholder="Product Name" />
+    <input [(ngModel)]="newProduct.price" placeholder="Product Price" type="number" />
+    <button (click)="createProduct()">Add Product</button>
+  </div>
+
+  <!-- Product List -->
+  <ul>
+    <li *ngFor="let product of products">
+      <span>{{ product.name }} - ${{ product.price }}</span>
+      <button (click)="updateProduct(product)">Update</button>
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </li>
+  </ul>
+</div>
